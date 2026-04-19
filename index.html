@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmay Deepak Patharkar - Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* ============ RESET STYLES ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ============ BODY STYLES ============ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* ============ CONTAINER STYLES ============ */
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* ============ HEADER STYLES ============ */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .header-text h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header-text .title {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+        }
+
+        /* ============ MAIN CONTENT STYLES ============ */
+        .main-content {
+            padding: 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .left-column {
+            background: #f8f9fa;
+            padding: 30px 25px;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .right-column {
+            padding: 30px 25px;
+        }
+
+        /* ============ SECTION STYLES ============ */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .left-column .section-title {
+            font-size: 16px;
+        }
+
+        /* ============ SKILLS STYLES ============ */
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h4 {
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* ============ ITEM STYLES ============ */
+        .education-item,
+        .experience-item,
+        .project-item,
+        .marks-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .education-item:last-child,
+        .experience-item:last-child,
+        .project-item:last-child,
+        .marks-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            font-size: 12px;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .marks-details {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            padding: 8px 0;
+        }
+
+        .marks-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            padding: 6px 0;
+        }
+
+        .marks-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .marks-value {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        /* ============ ACHIEVEMENTS STYLES ============ */
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .achievements li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* ============ SOFT SKILLS STYLES ============ */
+        .soft-skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .soft-skill-item {
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ============ SUMMARY STYLES ============ */
+        .summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* ============ RESPONSIVE STYLES ============ */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 0;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 28px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .left-column,
+            .right-column {
+                padding: 20px;
+            }
+        }
+
+        /* ============ PRINT STYLES ============ */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============ HEADER SECTION ============ -->
+        <div class="header">
+            <div class="header-inner">
+                <img 
+                    src="profile.jpeg.jpeg" 
+                    alt="Tanmay Patharkar" 
+                    class="profile-photo"
+                >
+                <div class="header-text">
+                    <h1>Tanmay Deepak Patharkar</h1>
+                    <p class="title">First Year Computer Engineering (Software engineering.) Student</p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>tanmaypatharkar2007@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7020690264</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Parbhani, Maharashtra</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span><a href="https://www.linkedin.com/in/tanmay-patharkar-b3058732b/">LinkedIn</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span><a href="https://github.com/tanmay2007-pirate">GitHub</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ MAIN CONTENT SECTION ============ -->
+        <div class="main-content">
+            <div class="two-column">
+                <!-- ============ LEFT COLUMN ============ -->
+                <div class="left-column">
+                    <!-- SKILLS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Web Development</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Technologies</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">MS Office</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOFT SKILLS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Soft Skills</h2>
+                        <div class="soft-skills">
+                            <div class="soft-skill-item">Problem Solving</div>
+                            <div class="soft-skill-item">Team Work</div>
+                            <div class="soft-skill-item">Communication</div>
+                            <div class="soft-skill-item">Quick Learner</div>
+                            <div class="soft-skill-item">Analytical</div>
+                            <div class="soft-skill-item">Adaptable</div>
+                        </div>
+                    </div>
+
+                    <!-- EDUCATION SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                            <div class="item-title">B.E. Computer Engineering</div>
+                            <div class="item-subtitle">MIT Academy of Engineering</div>
+                            <div class="item-date">2023 - 2027 (Expected)</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="item-title">Higher Secondary Education</div>
+                            <div class="item-subtitle">Shree Beleshwar Junior College</div>
+                            <div class="item-date">Pedgaon, Parbhani</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="item-title">Secondary Education</div>
+                            <div class="item-subtitle">Nutan Vidyalaya School</div>
+                            <div class="item-date">Selu, Parbhani</div>
+                        </div>
+                    </div>
+
+                    <!-- SEMESTER MARKS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Semester Marks</h2>
+                        <div class="marks-item">
+                            <div class="item-title">Semester 1</div>
+                            <div class="marks-details">
+                                <div class="marks-row">
+                                    <span class="marks-label">SGPA:</span>
+                                    <span class="marks-value">9.00</span>
+                                </div>
+                                <div class="marks-row">
+                                    <span class="marks-label">CGPA:</span>
+                                    <span class="marks-value">9.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ RIGHT COLUMN ============ -->
+                <div class="right-column">
+                    <!-- PROFESSIONAL SUMMARY SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Career Objectives</h2>
+                        <div class="summary">
+                            To build a strong foundation in software development and web technologies while maintaining academic excellence. Aspiring to secure internship opportunities in software development to gain practical experience and contribute meaningfully to real-world projects.
+                        </div>
+                    </div>
+
+                    <!-- PERSONAL GOALS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Personal Goals & Values</h2>
+                        <ul class="achievements">
+                            <li>Master multiple programming languages and develop expertise in full-stack web development</li>
+                            <li>Contribute to open-source projects and build a strong GitHub portfolio</li>
+                            <li>Learn and implement best practices in code quality and software architecture</li>
+                            <li>Develop strong problem-solving and analytical thinking skills</li>
+                            <li>Build professional network and collaborate with experienced developers</li>
+                        </ul>
+                    </div>
+
+                    <!-- PROJECTS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Projects & Assignments</h2>
+                        <div class="project-item">
+                            <div class="item-title">Personal Portfolio Website</div>
+                            <div class="item-subtitle">Full-Stack Web Development</div>
+                            <div class="item-date">2024</div>
+                            <div class="item-description">
+                                Developed a responsive personal portfolio website to showcase projects, skills, and academic achievements.
+                            </div>
+                            <ul class="achievements">
+                                <li>Built responsive design using HTML5 and CSS3</li>
+                                <li>Implemented mobile-first approach for better accessibility</li>
+                                <li>Used version control (Git/GitHub) for project management</li>
+                                <li>Optimized for cross-browser compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ACCOMPLISHMENTS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Accomplishments</h2>
+                        <ul class="achievements">
+                            <li>Achieved 9.00 SGPA/CGPA in Semester 1 - MIT Academy of Engineering</li>
+                            <li>Completed multiple programming projects in C, C++, and Python</li>
+                            <li>Developed responsive web design projects using HTML5, CSS3, and JavaScript</li>
+                            <li>Successfully maintained personal GitHub repository with clean code practices</li>
+                            <li>Active participant in academic coursework and technical workshops</li>
+                        </ul>
+                    </div>
+
+                    <!-- EXPERIENCE & PARTICIPATION SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Experience & Participation</h2>
+                        <div class="experience-item">
+                            <div class="item-title">Academic Projects & Assignments</div>
+                            <div class="item-subtitle">MIT Academy of Engineering</div>
+                            <div class="item-date">2023 - Present</div>
+                            <div class="item-description">
+                                Actively engaged in coursework involving programming, data structures, and web development. Completing assignments and projects that enhance practical coding skills.
+                            </div>
+                            <ul class="achievements">
+                                <li>Completed programming assignments in C, C++, Python, and Java</li>
+                                <li>Working on data structures and algorithms assignments</li>
+                                <li>Learning industry best practices through academic projects</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- TESTIMONIALS SECTION -->
+                    <div class="section">
+                        <h2 class="section-title">Recommendations</h2>
+                        <div class="summary">
+                            <p><strong>Note:</strong> Professional recommendations and testimonials from professors, mentors, and project collaborators will be added as they are received. Currently building professional relationships through academic coursework and collaborative projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
